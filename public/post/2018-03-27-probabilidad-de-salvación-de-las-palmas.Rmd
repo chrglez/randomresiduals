@@ -10,6 +10,7 @@ tags:
   - Las Palmas
   - Montecarlo
 slug: probabilidad-de-salvación-de-las-palmas2
+description: "Quedan 9 jordadas para el final de la temporada 17/18 de LaLiga y parece que la permanencia se disputará entre tres equipos, RC Deportivo, UD Las Palmas y Levante UD, que pelearán por evitar los dos puestos de descenso que quedan. ¿Cuáles son sus probabilidades de permanencia?" 
 ---
 
 
@@ -17,7 +18,7 @@ slug: probabilidad-de-salvación-de-las-palmas2
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-Quedan 9 jordadas para el final de la temporada 17/18 de [LaLiga](http://www.laliga.es/) y parece que la permanencia se disputará entre tres equipos, **RC Deportivo**, **UD Las Palmas** y **Levante UD**, que pelearán por evitar los dos puestos de descenso que quedan.
+Quedan 9 jordadas para el final de la temporada 17/18 de [LaLiga](http://www.laliga.es/) y parece que la permanencia se disputará entre tres equipos, **RC Deportivo**, **UD Las Palmas** y **Levante UD**, que pelearán por evitar los dos puestos de descenso que quedan. ¿Cuáles son sus probabilidades de permanencia?
 
 
 
@@ -93,7 +94,7 @@ scale_y_continuous(limits = c(18, 48), expand = c(0, 0), breaks = seq(18,48,5))+
       labs(x = NULL, y = NULL) 
 ```
 
-¿Qué ocurre si aumentamos el número de simulaciones? Pongamos que repetimos este proceso 10. Para cada una de estas repeticiones obtendremos una simulación del resultado al final de temporada. A continuación mostramos el resultado en puntos para esas 10 repeticiones. 
+¿Qué ocurre si aumentamos el número de simulaciones? Pongamos que repetimos este proceso 10 veces. Para cada una de estas repeticiones obtendremos una simulación del resultado al final de temporada. A continuación mostramos el resultado en puntos para esas 10 repeticiones. 
 ```{r, echo = F}
 rsim1 <- p_tot[1:10,]
 names(rsim1) <- c("RC Deportivo", "UD Las Palmas", "Levante UD")
