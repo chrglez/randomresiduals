@@ -1,0 +1,204 @@
+---
+title: ¿Existen opciones de salvación para la UD Las Palmas?
+author: Chrisian González, Miguel Ángel Negrín, Jaime Pinilla
+date: '2018-03-27'
+categories:
+  - Deporte
+tags:
+  - Deporte
+  - LaLiga
+  - Las Palmas
+  - Montecarlo
+slug: probabilidad-de-salvación-de-las-palmas2
+---
+
+
+
+<p>Quedan 9 jordadas para el final de la temporada 17/18 de <a href="http://www.laliga.es/">LaLiga</a> y parece que la permanencia se disputará entre tres equipos, <strong>RC Deportivo</strong>, <strong>UD Las Palmas</strong> y <strong>Levante UD</strong>, que pelearán por evitar los dos puestos de descenso que quedan.</p>
+<div id="metodo-motecarlo" class="section level2">
+<h2>Método Motecarlo</h2>
+<p>Los últimos puestos de la <a href="http://www.laliga.es/laliga-santander">tabla clasificatoria</a> lo ocupan el <strong>Málaga CF</strong> con <strong>14</strong> puntos, <strong>RC Deportivo</strong> con <strong>20</strong>, <strong>UD Las Palmas</strong> con <strong>21</strong>, <strong>Levante UD</strong> con <strong>27</strong> y <strong>D. Alavés</strong> con <strong>31</strong>. Dando por descendido al <strong>Málaga CF</strong> y considerando que el <strong>D. Alavés</strong> permanece un año más en Primera y con la intención de predecir cuál es la probabilidad de salvación de los equipos implicados se ha elaborado un modelo basado en el <a href="https://es.wikipedia.org/wiki/M%C3%A9todo_de_Montecarlo">método de <em>Montecarlo</em></a>. Simulamos el resultado de los partidos de los tres equipos para las 9 suponiendo equiprobabildad de los resultados. Es decir, la probabilidad de victoria, empate y derrota es 1/3. Para nosotros, una simulación contiene el resultado los tres equipos para las 9 jornadas que quedan. Mostramos a continuación el resultado de una simulación.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">RC Deportivo</th>
+<th align="right">UD Las Palmas</th>
+<th align="right">Levante UD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Jornada 1</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td>Jornada 2</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td>Jornada 3</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td>Jornada 4</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td>Jornada 5</td>
+<td align="right">3</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td>Jornada 6</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td>Jornada 7</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">3</td>
+</tr>
+<tr class="even">
+<td>Jornada 8</td>
+<td align="right">0</td>
+<td align="right">3</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td>Jornada 9</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">3</td>
+</tr>
+</tbody>
+</table>
+<p>Si sumamos los puntos obtenidos por cada equipo en la simulación y el resultado se lo añadimos a los actuales obtenemos los puntos a final de temporada.</p>
+<p>Siguiendo con nuestro ejemplo:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">RC Deportivo</th>
+<th align="right">UD Las Palmas</th>
+<th align="right">Levante UD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">28</td>
+<td align="right">39</td>
+<td align="right">40</td>
+</tr>
+</tbody>
+</table>
+<p>pudiendo incluso ver la evolución de los 3 equipos en LALiga hasta final de temporada siguiendo esa simulación (Figura <a href="#fig:evol">1</a>)</p>
+<div class="figure"><span id="fig:evol"></span>
+<img src="/post/2018-03-27-probabilidad-de-salvación-de-las-palmas_files/figure-html/evol-1.png" alt="Evolución de puntos según una de las simulaciones del modelo." width="672" />
+<p class="caption">
+Figure 1: Evolución de puntos según una de las simulaciones del modelo.
+</p>
+</div>
+<p>¿Qué ocurre si aumentamos el número de simulaciones? Pongamos que repetimos este proceso 10. Para cada una de estas repeticiones obtendremos una simulación del resultado al final de temporada. A continuación mostramos el resultado en puntos para esas 10 repeticiones.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">RC Deportivo</th>
+<th align="right">UD Las Palmas</th>
+<th align="right">Levante UD</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">28</td>
+<td align="right">39</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="right">31</td>
+<td align="right">33</td>
+<td align="right">36</td>
+</tr>
+<tr class="odd">
+<td align="right">24</td>
+<td align="right">32</td>
+<td align="right">42</td>
+</tr>
+<tr class="even">
+<td align="right">31</td>
+<td align="right">27</td>
+<td align="right">40</td>
+</tr>
+<tr class="odd">
+<td align="right">29</td>
+<td align="right">33</td>
+<td align="right">40</td>
+</tr>
+<tr class="even">
+<td align="right">32</td>
+<td align="right">37</td>
+<td align="right">40</td>
+</tr>
+<tr class="odd">
+<td align="right">31</td>
+<td align="right">36</td>
+<td align="right">32</td>
+</tr>
+<tr class="even">
+<td align="right">28</td>
+<td align="right">30</td>
+<td align="right">42</td>
+</tr>
+<tr class="odd">
+<td align="right">31</td>
+<td align="right">32</td>
+<td align="right">43</td>
+</tr>
+<tr class="even">
+<td align="right">29</td>
+<td align="right">32</td>
+<td align="right">39</td>
+</tr>
+</tbody>
+</table>
+<p>De aquí ya se pueden hacer ciertas estimaciones. POr ejemplo, que el Levante se clasifica en nueve de las 10 simulaciones y Las Palmas en solo una dando como resultado que la probabilidad de salvación de Las Palmas es del 10%. Aumentando el número de simulaciones obtendremos unos resultados más precisos. Estas frecuencias obtenidas a partir de la división entre casos positivos y casos totales pueden ser consideradas representativas de la probabilidad porque el número de repeticiones es muy grande y porque el método empleado parece simular bien un fenómeno aleatorio.</p>
+<div id="probailidades-de-permanecia." class="section level3">
+<h3>Probailidades de permanecia.</h3>
+<p>Tras 15000 simulaciones los resultados son los siguientes. (Figura <a href="#fig:prob">2</a>)</p>
+<div class="figure"><span id="fig:prob"></span>
+<img src="/post/2018-03-27-probabilidad-de-salvación-de-las-palmas_files/figure-html/prob-1.png" alt="Probabilidad de permanencia de RC Deportivo, UD Las Palmas y Levante UD según modelo basado en 15000 con equiprobailidad de victoria, empate y derrota." width="672" />
+<p class="caption">
+Figure 2: Probabilidad de permanencia de RC Deportivo, UD Las Palmas y Levante UD según modelo basado en 15000 con equiprobailidad de victoria, empate y derrota.
+</p>
+</div>
+</div>
+<div id="probabilidades-condicionadas." class="section level3">
+<h3>Probabilidades condicionadas.</h3>
+<p>A partir de aquí se puede hacer condicionadas.</p>
+<p>Por ejemplo, se podría averiguar cuáles son las probabilidades si se consigue ganar al Levante por dos o más goles. (Figura <a href="#fig:problevante">3</a>)</p>
+<div class="figure"><span id="fig:problevante"></span>
+<img src="/post/2018-03-27-probabilidad-de-salvación-de-las-palmas_files/figure-html/problevante-1.png" alt="Probabilidad de permanencia de RC Deportivo, UD Las Palmas y Levante UD según modelo basado en 15000 con equiprobailidad de victoria, empate y derrota condicionado a que Las Palmas gane al Levante por dos o más goles." width="672" />
+<p class="caption">
+Figure 3: Probabilidad de permanencia de RC Deportivo, UD Las Palmas y Levante UD según modelo basado en 15000 con equiprobailidad de victoria, empate y derrota condicionado a que Las Palmas gane al Levante por dos o más goles.
+</p>
+</div>
+<p>O proponiendo condiciones más complejas como, por ejemplo, probabilidad de salvación si no se pierde contra el Madrid y ganando por dos goles o más al Levante. (Figura <a href="#fig:probmadrid">4</a>)</p>
+<div class="figure"><span id="fig:probmadrid"></span>
+<img src="/post/2018-03-27-probabilidad-de-salvación-de-las-palmas_files/figure-html/probmadrid-1.png" alt="Probabilidad de permanencia de RC Deportivo, UD Las Palmas y Levante UD según modelo basado en 15000 con equiprobailidad de victoria, empate y derrota condicionado a que Las Palmas gane al Levante por dos o más golesy no pierda ante el Madrid." width="672" />
+<p class="caption">
+Figure 4: Probabilidad de permanencia de RC Deportivo, UD Las Palmas y Levante UD según modelo basado en 15000 con equiprobailidad de victoria, empate y derrota condicionado a que Las Palmas gane al Levante por dos o más golesy no pierda ante el Madrid.
+</p>
+</div>
+<p>En definitiva, ahora mismo las probabilidades de salvación de Las Palmas, aproximadamente 12 entre 100 o 1 entre 10, son escasas pero matemáticamente no es imposible. Si esta misma situación se repitiese 10 veces en una el equipo se salvaría. Puede que la ocasión que estamos viviendo este año sea la ocasión en que Las Palmas se salve.</p>
+</div>
+</div>

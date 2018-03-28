@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Random Residuals</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Random Residuals</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 27 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deporte</title>
+      <link>/tags/deporte/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/deporte/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Laliga</title>
+      <link>/tags/laliga/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/laliga/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Las Palmas</title>
+      <link>/tags/las-palmas/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/las-palmas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Montecarlo</title>
+      <link>/tags/montecarlo/</link>
+      <pubDate>Tue, 27 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/montecarlo/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
