@@ -23,10 +23,11 @@ Quedan 9 jordadas para el final de la temporada 17/18 de [LaLiga](http://www.lal
 
 
 ## Método Motecarlo
-```{r sim, echo = FALSE, message=FALSE}
+```{r sim, echo = FALSE, message=FALSE, warning=FALSE}
 library(dplyr)
 library(purrr)
 library(ggplot2)
+library(png)
 set.seed(1234)
 n <- 15000
 equipos <- list("depor","lp","levante")
@@ -70,28 +71,40 @@ pudiendo incluso ver la evolución de los 3 equipos en LALiga hasta final de tem
 
 ```{r evol, echo = F, message=F, fig.cap='Evolución de puntos según una de las simulaciones del modelo.'}
 
-data_frame(depor = cumsum(simulaciones$depor[,1]) + 20,
-           lp = cumsum(simulaciones$lp[,1]) + 21,
-           levante = cumsum(simulaciones$lp[,1]) + 27) %>%
+
+img <- data.frame(img = c("depor.png","udlaspalmas.png","levante.png"),
+                  x = c(37.8,29.2,29.2),
+                  y = c(31,24,30),
+                  equipo = factor(c("depor","lp","levante"),levels = c("depor","lp","levante"), labels = c("Deportivo","Las Palmas", "Levante")))
+
+data_frame(depor = c(20,cumsum(simulaciones$depor[,1]) + 20),
+           lp = c(21,cumsum(simulaciones$lp[,1]) + 21),
+           levante = c(27,cumsum(simulaciones$lp[,1]) + 27)) %>%
       tidyr::gather(equipo,puntos) %>%
-      mutate(jornada =rep(1:9,3),
+      mutate(jornada =rep((0:9)+29,3),
              equipo = factor(equipo,levels = c("depor","lp","levante"), labels = c("Deportivo","Las Palmas", "Levante"))) %>% 
       ggplot(aes(x=jornada, y = puntos, colour = equipo)) +
-      geom_step(size = 1) +
+      geom_step(size = 1) + 
+      geom_text(aes(label = puntos, y = puntos + 0.6), size = 2) +
+      scale_size_identity() +
+      ggimage::geom_image(data = img,
+            aes(x=x, y=y,image=img), size=0.1) +
       theme(plot.subtitle = element_text(size = 12, 
     face = "bold", colour = "gray55", vjust = 1), 
     plot.caption = element_text(vjust = 1), 
     axis.text.x = element_text(size = 11, 
         colour = "gray55"),
-    axis.text.y = element_text(size = 11, colour = "gray55"),
+    #axis.text.y = element_text(size = 11, colour = "gray55"),
     panel.background = element_rect(fill = NA),
     axis.ticks = element_blank(),
-    legend.title = element_blank()) +
+    axis.text.y =  element_blank(),
+    #legend.title = element_blank()) +
+    legend.position="none")+
       labs(subtitle = "Evolución de puntos de Deportivo, Las Palmas y Levante para una de las simulaciones") +
-scale_y_continuous(limits = c(18, 48), expand = c(0, 0), breaks = seq(18,48,5))+
-      scale_x_continuous(breaks = 1:9)+
+scale_y_continuous(limits = c(15, 48), expand = c(0, 0), breaks = seq(18,48,5))+
+      scale_x_continuous(breaks = (0:9)+29)+
       scale_colour_manual(values = c("#0132FD","#CEAD06","#AD0735")) +
-      labs(x = NULL, y = NULL) 
+      labs(x = "jornada", y = NULL) 
 ```
 
 ¿Qué ocurre si aumentamos el número de simulaciones? Pongamos que repetimos este proceso 10 veces. Para cada una de estas repeticiones obtendremos una simulación del resultado al final de temporada. A continuación mostramos el resultado en puntos para esas 10 repeticiones. 
